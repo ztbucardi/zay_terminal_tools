@@ -2,9 +2,21 @@
 
 Neste projeto disponibilizo pequenos scripts que montei para facilitar o dia a dia no terminal
 
-Para usa-lo, baixe ou fork o projeto e adicione no bash de seu terminal, exemplo:
+Segue abaixo o procedimento para carregar os scripts no bahs:
 
+* Clone o projeto para sua pasta HOME
+
+```
+git clone https://github.com/ztbucardi/zay_terminal_tools.git ~/.zaytools
+```
+
+* Adicione a chama ao BASH
+
+```
 vi ~/.bashrc
-if [ -f ~/.zay_tools ]; then
-    . ~/.zay_tools
+if [ -f ~/.zaytools/zay_tools ]; then
+    . ~/.zaytools/zay_tools
 fi
+```
+
+
