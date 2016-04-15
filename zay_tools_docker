@@ -1,0 +1,14 @@
+#Comandos docker
+
+docker.ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
+
+docker.ip.ssh() {
+  ssh $(docker inspect --format '{{.NetworkSettings.IPAddress}}' "$@")
+}
+
+docker.ip.all() {
+  docker ps -q | awk {'system ("docker inspect --format '\''{{.Name}}: {{.NetworkSettings.IPAddress}}'\'' " $1)'}
+}
+
