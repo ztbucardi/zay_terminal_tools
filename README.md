@@ -1,4 +1,4 @@
-# zay_terminal_tools
+# ZAY Terminal tools
 
 Neste projeto disponibilizo pequenos scripts que montei para facilitar o dia a dia no terminal
 
@@ -14,6 +14,9 @@ git clone https://github.com/ztbucardi/zay_terminal_tools.git ~/.zaytools
 
 ```
 vi ~/.bashrc
+```
+
+```
 if [ -f ~/.zaytools/zay_tools ]; then
     . ~/.zaytools/zay_tools
 fi
