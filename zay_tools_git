@@ -1,0 +1,11 @@
+# Tools for git
+
+zaytools.git.set.user() {
+  # Defina aqui suas conf do git user 
+
+  git config --global user.name "Leandro Augusto"
+  git config --global user.email "leandro@zaytech.com.br"  
+}
+
+
+zaytools.git.set.user() {
