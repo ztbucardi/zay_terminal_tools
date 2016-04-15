@@ -25,7 +25,6 @@ zaytools.git.repository.info() {
       branch=$(cd $P ; git branch | grep "*" | awk {'print ($2)'})
 
       commit_local=$(cd $P ; git rev-parse HEAD)
-#      commit_remote=$(cd $P ; git ls-remote https://github.com/ztbucardi/odoo_addons_examples.git | grep "8.0" | awk {'print($1)'})
       commit_remote=$(git ls-remote $remote | grep "refs/heads/$branch\$" | awk {'print($1)'})
       echo "$P;$remote;$branch;$commit_local;$commit_remote"
     done
