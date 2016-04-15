@@ -18,15 +18,16 @@ zaytools.git.repository.info() {
   if [ -z "${@}" ]; then
     echo "Diretorio esta vazio, favor definir um diretorio para procura"
   else
+    echo "local;remote;branch;last_commit_local;last_commit_remote"
     for P in $(find $@ -iname .git | awk '{gsub(".git","",$1); print $1}')
     do
       remote=$(cd $P ; git remote -v | grep fetch| awk {'print($2)'})
       branch=$(cd $P ; git branch | grep "*" | awk {'print ($2)'})
 
       commit_local=$(cd $P ; git rev-parse HEAD)
-      commit_remote=$(cd $P ; git ls-remote https://github.com/ztbucardi/odoo_addons_examples.git | grep "8.0" | awk {'print($1)'})
+#      commit_remote=$(cd $P ; git ls-remote https://github.com/ztbucardi/odoo_addons_examples.git | grep "8.0" | awk {'print($1)'})
+      commit_remote=$(git ls-remote $remote | grep "refs/heads/$branch\$" | awk {'print($1)'})
       echo "$P;$remote;$branch;$commit_local;$commit_remote"
     done
   fi
 }
-
