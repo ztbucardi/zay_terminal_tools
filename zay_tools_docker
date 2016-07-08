@@ -12,3 +12,7 @@ docker.ip.all() {
   docker ps -q | awk {'system ("docker inspect --format '\''{{.Name}}: {{.NetworkSettings.IPAddress}}'\'' " $1)'}
 }
 
+
+docker.ps.loop() {
+  watch -n 3 -t "docker ps --format '{{.Names}},{{.Image}}\n{{.Status}}, PORTAS: {{.Ports}}\n'"
+}
